@@ -69,44 +69,45 @@ const showAiDetailModal = (id) => {
 
 const modalDetail = (modalDetail) => {
   const aiModalDescription = document.getElementById("modal-description");
-  aiModalDescription.innerText = modalDetail.description;
+  aiModalDescription.innerText = modalDetail.description ? modalDetail.description : 'No data found';
 
   const planDetailField = document.getElementById("plan-detail");
-  planDetailField.innerText = modalDetail.pricing[0].plan;
+  planDetailField.innerText = modalDetail.pricing[0].plan ? modalDetail.pricing[0].plan : 'Cost/Basic';
 
   const priceDetailField = document.getElementById("price-detail");
-  priceDetailField.innerText = modalDetail.pricing[0].price;
+  priceDetailField.innerText = modalDetail.pricing[0].price ? modalDetail.pricing[0].price : 'Free of Cost' ;
 
   const planDetailField1 = document.getElementById("plan1-detail");
-  planDetailField1.innerText = modalDetail.pricing[1].plan;
+  planDetailField1.innerText = modalDetail.pricing[1].plan ? modalDetail.pricing[1].plan : 'Cost/Pro' ;
 
   const priceDetailField1 = document.getElementById("price1-detail");
-  priceDetailField1.innerText = modalDetail.pricing[1].price;
+  priceDetailField1.innerText = modalDetail.pricing[1].price ?  modalDetail.pricing[1].price : 'Free of Cost';
 
   const planDetailField2 = document.getElementById("plan2-detail");
-  planDetailField2.innerText = modalDetail.pricing[2].plan;
+  planDetailField2.innerText = modalDetail.pricing[2].plan ? modalDetail.pricing[2].plan : 'Cost/Enterprise';
 
   const priceDetailField2 = document.getElementById("price2-detail");
-  priceDetailField2.innerText = modalDetail.pricing[2].price;
+  priceDetailField2.innerText = modalDetail.pricing[2].price ?  modalDetail.pricing[2].price: 'Free of Cost';
 
   // for feature
   const aiHubFeatureTitle = document.getElementById("ai-hub-feature1");
-  aiHubFeatureTitle.innerText = modalDetail.features["1"].feature_name;
+  aiHubFeatureTitle.innerText = modalDetail.features["1"].feature_name ? modalDetail.features["1"].feature_name : 'No data found';
 
   const aiHubFeatureTitle2 = document.getElementById("ai-hub-feature2");
-  aiHubFeatureTitle2.innerText = modalDetail.features["2"].feature_name;
+  aiHubFeatureTitle2.innerText = modalDetail.features["2"].feature_name ? modalDetail.features["2"].feature_name : 'No data found';
 
   const aiHubFeatureTitle3 = document.getElementById("ai-hub-feature3");
-  aiHubFeatureTitle3.innerText = modalDetail.features["3"].feature_name;
+  aiHubFeatureTitle3.innerText = modalDetail.features["3"].feature_name ? modalDetail.features["3"].feature_name : 'No data found';
 
   // for intregation
   const aiHubIntegrationsTitle1 = document.getElementById("ai-hub-Integrations1");
-  aiHubIntegrationsTitle1.innerText = modalDetail.integrations[0];
+  aiHubIntegrationsTitle1.innerText = modalDetail.integrations[0] ? modalDetail.integrations[0] : 'No data found';
 
   const aiHubIntegrationsTitle2 = document.getElementById("ai-hub-Integrations2");
-  aiHubIntegrationsTitle2.innerText = modalDetail.integrations[1];
+  aiHubIntegrationsTitle2.innerText = modalDetail.integrations[1] ? modalDetail.integrations[1] : 'No data found';
+
   const aiHubIntegrationsTitle3 = document.getElementById("ai-hub-Integrations3");
-  aiHubIntegrationsTitle3.innerText = modalDetail.integrations[2];
+  aiHubIntegrationsTitle3.innerText = modalDetail.integrations[2] ?  modalDetail.integrations[2] : 'No data found' ;
 
   // card-2 image and feature
   const imageBody= document.getElementById('image-body')
