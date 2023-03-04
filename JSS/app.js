@@ -21,9 +21,12 @@ const showData=  (aiDatas) =>{
                       <li class="list-group-item">${aiData.features[2]}</li>
                     </ol>
                     </div>
-                    <div class="card-footer">
-                      <h4 class="text-bolder">${aiData.name}</h4>
-                      <p><span><i class="fa-solid fa-calendar-days"></i></span> ${aiData.published_in}</p>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <div>
+                        <h4 class="text-bolder">${aiData.name}</h4>
+                        <p><span><i class="fa-solid fa-calendar-days"></i></span> ${aiData.published_in}</p>
+                      </div> 
+                        <button href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#seemoreDetailModal">See More</button>
                     </div>
                 </div>`
       aiDataContainer.appendChild(dataContainerDiv)
