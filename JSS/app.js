@@ -117,5 +117,8 @@ const modalDetail = (modalDetail) => {
   btnAccurecy.innerText= modalDetail.accuracy.score ? modalDetail.accuracy.score * 100 : 'no'
 
   const imageText= document.getElementById('image-text')
-  imageText.innerText= modalDetail.input_output_examples[0].input 
+  imageText.innerText= modalDetail.input_output_examples[0].input ? modalDetail.input_output_examples[0].input : 'no data found'
+
+  const imageText2= document.getElementById('image-text2')
+  imageText2.innerText= modalDetail.accuracy.description ? modalDetail.accuracy.description : 'no data found'
 };
