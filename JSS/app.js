@@ -1,12 +1,12 @@
 const dataLoad= ()=> {
     fetch('https://openapi.programming-hero.com/api/ai/tools')
     .then(response=> response.json())
-    .then(data=> showData(data.data.tools))
+    .then(data=> showData(data.data.tools.slice(0, 6)))
 }
 
-const showData=  aiDatas =>{
+const showData=  (aiDatas) =>{
    const aiDataContainer = document.getElementById('ai-data-container');
-   aiDatas= aiDatas.slice(0,6);
+   aiDataContainer.innerText= '';
    aiDatas.forEach(aiData => {
       const dataContainerDiv= document.createElement('div');
       dataContainerDiv.classList.add('col');
@@ -29,4 +29,14 @@ const showData=  aiDatas =>{
       aiDataContainer.appendChild(dataContainerDiv)
    });
 }
+
 dataLoad()
+//show all button
+
+document.getElementById('show-all-btn').addEventListener('click', function(){
+  fetch('https://openapi.programming-hero.com/api/ai/tools')
+    .then(response=> response.json())
+    .then(data=> showData(data.data.tools))
+    const hideButton= document.getElementById("btn-show-all");
+    hideButton.classList.add('d-none')
+})
