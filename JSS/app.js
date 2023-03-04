@@ -6,6 +6,7 @@ const dataLoad= ()=> {
 
 const showData=  aiDatas =>{
    const aiDataContainer = document.getElementById('ai-data-container');
+   aiDatas= aiDatas.slice(0,6);
    aiDatas.forEach(aiData => {
       const dataContainerDiv= document.createElement('div');
       dataContainerDiv.classList.add('col');
