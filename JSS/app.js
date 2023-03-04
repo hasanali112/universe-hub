@@ -1,7 +1,7 @@
 const dataLoad= ()=> {
     fetch('https://openapi.programming-hero.com/api/ai/tools')
     .then(response=> response.json())
-    .then(data=> showData(data.data.tools.slice(0, 6)))
+    .then(data=>  showData(data.data.tools.slice(0, 6)))
 }
 
 const showData=  (aiDatas) =>{
@@ -28,9 +28,22 @@ const showData=  (aiDatas) =>{
                 </div>`
       aiDataContainer.appendChild(dataContainerDiv)
    });
+   showSpin(false)
 }
 
 dataLoad()
+//load spinner
+const showSpin= loadSpin => {
+  const spinField= document.getElementById('spinner')
+  if(loadSpin){
+     spinField.classList.remove('d-none')
+  }
+  else{
+      spinField.classList.add('d-none')
+  }
+}
+
+
 //show all button
 
 document.getElementById('show-all-btn').addEventListener('click', function(){
@@ -39,4 +52,5 @@ document.getElementById('show-all-btn').addEventListener('click', function(){
     .then(data=> showData(data.data.tools))
     const hideButton= document.getElementById("btn-show-all");
     hideButton.classList.add('d-none')
+    showSpin(true)
 })
