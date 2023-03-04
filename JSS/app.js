@@ -126,7 +126,7 @@ const modalDetail= modalDetail =>{
   <div class="card text-bg-dark">
       <img src="${modalDetail.image_link[0]}" class="card-img" alt="...">
       <div class="card-img-overlay">
-          <button></button>
+          <button class="btn btn-danger float-end">${modalDetail.accuracy.score}</button>
       </div>
   </div>
 </div>
